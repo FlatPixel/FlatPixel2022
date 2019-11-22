@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Flat Pixel - Augmented Reality Game studio</title>
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Alata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <main>
+      <!-- Navigation -->
+      <nav>
+        <ul>
+          <li>
+            <a id="btnAbout" class="scroll" data-side="show-left" href="#about"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              id="btnHome"
+              class="scroll active"
+              data-side="show-front"
+              href="#home"
+            >
+              <!-- <img src="img/FPlogo_rounded.png" alt="home Logo"> -->
+              Home
+            </a>
+          </li>
+          <li>
+            <a
+              id="btnContact"
+              class="scroll"
+              data-side="show-right"
+              href="#contact"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <section class="center">
+        <section id="cube" class="show-front">
+          <!-- Home -->
+          <section id="home" class="front">
+            <img
+              class="logo"
+              src="img/FPlogo_transparent.png"
+              alt="Flat Pixel Logo"
+            />
+          </section>
+          <!-- About -->
+          <section id="about" class="left">
+            <h2>About us</h2>
+            <img
+              class="flatpixel-logo"
+              src="img/FPlogo_transparent.png"
+              alt="Flat Pixel Logo"
+            />
+            <div class="text-container">
+              <p>
+                <!-- Every game is stuffed with addicting gameplay and a striking
+                visual identity. Our team is agile, lean and versatile, with
+                plenty of experience in software engineering, game design, 3D
+                art and the power of Augmented Reality. Flat Pixel is a game
+                development team that packs a big punch! Along with our squad of
+                international collaborators, we strive to deliver juicy, robust
+                video games to be enjoyed without moderation. Based in Paris,
+                we're always thirsty for new encounters; so if this sounds like
+                a match, give us a shout! -->
+                <strong>Flat Pixel</strong> is a Paris based
+                <strong>Game studio</strong> composed of artists and engineers
+                dedicated to unique visual experiences and cutting edge
+                technology. Specialized in augmented reality games since 2012.
+                After having created over 60 mini-games in
+                <strong>Augmented Reality</strong>, we’ve acquire some expertise
+                in harnessing its power to create truly fun, novel and polished
+                AR experiences.
+              </p>
+              <br />
+              <p>
+                We are a game development team that packs a big punch! Along
+                with our squad of <strong>international collaborators</strong>,
+                we strive to deliver juicy, robust video games to be enjoyed
+                without moderation. We're always thirsty for new encounters; so
+                if this sounds like a match,
+                <a href="#contact" class="scroll give-us-a-shout"
+                  >give us a shout</a
+                >!
+              </p>
+            </div>
+            <a href="presskit.html" class="press-kit" target="_blank"
+              ><img src="img/presskit_full.png" alt="Press Kit Icon"
+            /></a>
+            <a href="hello@flatpixel.fr" class="join-us"
+              ><img src="img/joinus_full.png" alt="Join us portrait"
+            /></a>
+            <img
+              class="collaborator magic"
+              src="img/parteners/magiclogo.png"
+              alt="Magic Logo"
+            />
+            <img
+              class="collaborator nick"
+              src="img/parteners/nicklogo.png"
+              alt="Nick Logo"
+            />
+            <img
+              class="collaborator spaceape"
+              src="img/parteners/spaceapelogo.png"
+              alt="SpaceApe Logo"
+            />
+          </section>
+          <!-- Contact -->
+          <section id="contact" class="right">
+            <h2>Contact & Social</h2>
+            <img class="map" src="img/Paris.png" alt="Location map" />
+            <a href="mailto:hello@flatpixel.fr"
+              ><img
+                class="email"
+                src="img/social/mail_full.png"
+                alt="email Logo"
+            /></a>
+            <a
+              href="https://fr.linkedin.com/company/flat-pixel-society"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="linkedin"
+                src="img/social/linkedin_full.png"
+                alt="LinkedIn Logo"
+            /></a>
+            <a
+              href="https://www.twitter.com/Flat_Pixel"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="twitter"
+                src="img/social/twitter_full.png"
+                alt="Twitter Logo"
+            /></a>
+            <a
+              href="https://www.instagram.com/flat_pixel"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="instagram"
+                src="img/social/insta_full.png"
+                alt="Insta Logo"
+            /></a>
+            <a
+              href="https://www.facebook.com/FlatPixelSociety/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="facebook"
+                src="img/social/facebook_full.png"
+                alt="Fb Logo"
+            /></a>
+          </section>
+        </section>
+      </section>
+      <footer><p>Handmade by Flat Pixel in 2020</p></footer>
+    </main>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/fittext.js"></script>
+    <script>
+      window.fitText(document.getElementsByClassName("hello"), 0.4);
+      // window.fitText(document.getElementsByClassName("desc")[0], 1.7);
+      // window.fitText(document.querySelectorAll("section > h2"), 0.85);
+    </script>
+  </body>
+</html>

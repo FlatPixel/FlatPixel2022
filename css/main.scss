@@ -1,0 +1,509 @@
+//
+// Reset
+//
+
+@viewport {
+  width: device-width; /* largeur du viewport */
+  zoom: 1; /* zoom initial à 1.0 (et clin d'oeil aux fans d'IE6/7) */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  outline: 0;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+
+@font-face {
+  font-family: "10Bit";
+  src: url("../fonts/10bit-webfont.woff2") format("woff2"),
+    url("../fonts/10bit-webfont.woff") format("woff");
+}
+
+@font-face {
+  font-family: "RetroGaming";
+  src: url("../fonts/Retro-Gaming.ttf") format("ttf"),
+    url("../fonts/Retro-Gaming.woff") format("woff");
+}
+
+//
+// Variables
+//
+
+$font-main: "10Bit", sans-serif;
+$font-alt: "Alata", sans-serif;
+
+$pink: #ff6b6a;
+$ligh-pink: #ffbbbb;
+$shadow: rgb(146, 68, 68);
+$light-shadow: #c62e2d;
+$green: #b2ffbd;
+$yellow: #fff4ad;
+$blue: #cbfefd;
+
+$break-mobile-height: 600px;
+$break-mobile-width: 600px;
+
+@mixin for-all-except-mobile {
+  @media screen and (min-width: $break-mobile-width) and (min-height: $break-mobile-height) {
+    @content;
+  }
+}
+
+@mixin for-mobile-only {
+  @media screen and (orientation: portrait) and (max-width: $break-mobile-width),
+    screen and (orientation: landscape) and (max-height: $break-mobile-height) {
+    @content;
+  }
+}
+
+@mixin for-mobile-portrait-only {
+  @media screen and (orientation: portrait) and (max-width: $break-mobile-width) {
+    @content;
+  }
+}
+
+@mixin for-mobile-landscape-only {
+  @media screen and (orientation: landscape) and (max-height: $break-mobile-height) {
+    @content;
+  }
+}
+
+//
+// Rules
+//
+
+body {
+  background-color: $pink;
+  font-family: $font-main;
+}
+
+main {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+
+  @include for-all-except-mobile {
+    grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+    grid-template-rows: 50px 1fr 50px;
+  }
+
+  @include for-mobile-portrait-only() {
+    grid-template-columns: 1fr minmax(200px, 900px) 1fr;
+    grid-template-rows: 50px 1fr 50px;
+  }
+
+  @include for-mobile-landscape-only() {
+    grid-template-columns: minmax(25px, 1fr) minmax(200px, 900px) minmax(
+        25px,
+        1fr
+      );
+    grid-template-rows: 50px 1fr 50px;
+  }
+}
+
+nav {
+  z-index: 1;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+  @include for-mobile-only {
+    grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+  }
+
+  ul {
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      overflow: hidden;
+
+      a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        color: $ligh-pink;
+        overflow: hidden;
+        font-size: 2em;
+        line-height: 50px;
+
+        // text-shadow: 0px 1px $shadow,
+        //             0px 2px $shadow,
+        //             0px 3px $shadow,
+        //             0px 4px $shadow,
+        //             0px 5px $shadow,
+        //             0px 6px $shadow,
+        //             0px 7px $shadow,
+        //             0px 8px $shadow;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.active {
+          color: $pink;
+          // text-shadow: 1px 1px $shadow;
+          // line-height: 64px;
+        }
+      }
+    }
+  }
+
+  #btnHome {
+    @include for-mobile-landscape-only {
+      display: none;
+    }
+  }
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  grid-row: 2;
+  grid-column: 2;
+
+  @include for-all-except-mobile {
+    // height: calc(100vh - 200px);
+    perspective: 600px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  #cube {
+    position: relative;
+
+    @include for-all-except-mobile {
+      width: 80%;
+      padding-bottom: 80%;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+
+    section {
+      width: 100%;
+
+      @include for-all-except-mobile {
+        position: absolute;
+        height: 100%;
+      }
+
+      @include for-mobile-portrait-only {
+        &:not(:first-child) {
+          margin: 50px 0;
+        }
+        padding: 5px 20px;
+      }
+
+      @include for-mobile-landscape-only {
+        &:not(:first-child):not(:nth-child(2)) {
+          margin: 50px 0;
+        }
+        padding: 5px 20px;
+      }
+    }
+
+    @include for-all-except-mobile {
+      .front {
+        transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
+      }
+      .right {
+        transform: translateX(50%) rotateY(90deg);
+      }
+      .back {
+        transform: rotateY(-90deg) translateX(-50%) rotateY(90deg);
+      }
+      .left {
+        // Fix to avoid white line from front side
+        transform: rotateY(-90deg) translateX(2px) rotateY(90deg)
+          translateX(-50%) rotateY(-90deg);
+      }
+      .top {
+        transform: translateY(50%) rotateX(90deg);
+      }
+      .bottom {
+        transform: translateY(-50%) rotateX(-90deg);
+      }
+    }
+  }
+
+  @include for-all-except-mobile {
+    .show-right {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
+    }
+    .show-front {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(0deg);
+    }
+    .show-left {
+      transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(90deg);
+    }
+  }
+
+  #home {
+    background-color: $pink;
+
+    @include for-mobile-landscape-only {
+      padding: 0 !important;
+
+      .logo {
+        width: auto;
+        height: 85vh;
+        display: none;
+      }
+    }
+  }
+
+  #about {
+    background-color: $pink;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 20px;
+    min-width: 0;
+    min-height: 0;
+
+    @include for-mobile-portrait-only {
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: 1fr;
+    }
+
+    @include for-mobile-landscape-only {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: 1fr;
+      grid-auto-flow: row dense;
+    }
+
+    h2 {
+      @include for-all-except-mobile {
+        display: none;
+      }
+
+      @include for-mobile-only {
+        font-family: $font-main;
+        font-size: 2.7em;
+        margin-top: 20px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        text-shadow: 0px 1px $light-shadow, 0px 2px $light-shadow,
+          0px 3px $light-shadow, 0px 4px $light-shadow, 0px 5px $light-shadow,
+          0px 6px $light-shadow, 0px 7px $light-shadow, 0px 8px $light-shadow;
+      }
+    }
+
+    .press-kit {
+      grid-column: 1;
+      @include for-mobile-portrait-only {
+        grid-column: span 3;
+      }
+
+      @include for-mobile-landscape-only {
+        grid-column: 1;
+      }
+    }
+
+    .join-us {
+      grid-column: 1;
+      @include for-mobile-portrait-only {
+        grid-column: span 3;
+      }
+
+      @include for-mobile-landscape-only {
+        grid-column: 2;
+      }
+    }
+
+    .collaborator {
+      @include for-mobile-portrait-only {
+        grid-column: span 2;
+      }
+    }
+
+    // @include for-mobile-landscape-only {
+    //   .magic {
+    //     grid-column: 3;
+    //   }
+
+    //   .nick {
+    //     grid-column: 4;
+    //   }
+
+    //   .spaceape {
+    //     grid-column: 5;
+    //   }
+    // }
+
+    .flatpixel-logo {
+      display: none;
+
+      @include for-mobile-landscape-only {
+        display: block;
+
+        grid-column: 1 / span 2;
+        // grid-row: 2 / span 2;
+      }
+    }
+
+    .text-container {
+      font-family: $font-alt;
+      overflow: scroll;
+      min-width: 0;
+      min-height: 0;
+
+      @include for-all-except-mobile {
+        grid-column: 2 / span 2;
+        grid-row: 1 / span 2;
+      }
+
+      @include for-mobile-portrait-only {
+        grid-column: 1 / -1;
+      }
+
+      @include for-mobile-landscape-only {
+        grid-column: 3 / span 3;
+        // grid-row: 2 / span 2;
+      }
+
+      p {
+        text-align: left;
+        text-overflow: ellipsis;
+        hyphens: auto;
+        font-size: 1.18em;
+
+        @include for-mobile-only {
+          font-size: 1.1em;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+
+        strong {
+          color: $yellow;
+          text-shadow: 0px 1px $light-shadow, 0px 2px $light-shadow;
+        }
+      }
+    }
+  }
+
+  #contact {
+    background-color: $pink;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    min-width: 0;
+    min-height: 0;
+
+    font-family: $font-alt;
+
+    h2 {
+      @include for-all-except-mobile {
+        display: none;
+      }
+
+      @include for-mobile-only {
+        font-family: $font-main;
+        font-size: 2.7em;
+        margin-top: 20px;
+        grid-column: 1 / -1;
+        grid-row: 1;
+
+        text-shadow: 0px 1px $light-shadow, 0px 2px $light-shadow,
+          0px 3px $light-shadow, 0px 4px $light-shadow, 0px 5px $light-shadow,
+          0px 6px $light-shadow, 0px 7px $light-shadow, 0px 8px $light-shadow;
+      }
+    }
+
+    @include for-mobile-portrait-only {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
+
+    @include for-mobile-landscape-only {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 20px;
+    }
+
+    .map {
+      overflow: hidden;
+      min-width: 0;
+      min-height: 0;
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 2;
+
+      @include for-mobile-portrait-only {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      @include for-mobile-landscape-only {
+        grid-column: 1 / span 2;
+        grid-row: 2 / span 2;
+      }
+
+      justify-content: center;
+      align-content: center;
+    }
+
+    .email,
+    .twitter,
+    .linkedin,
+    .instagram,
+    .facebook {
+      overflow: hidden;
+      min-width: 0;
+      min-height: 0;
+      padding: 20%;
+    }
+
+    .facebook {
+      @include for-mobile-only() {
+        display: none;
+      }
+    }
+  }
+}
+
+footer {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+
+  p {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: $ligh-pink;
+    overflow: hidden;
+    font-size: 1.2em;
+    line-height: 50px;
+  }
+}
