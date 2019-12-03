@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game>
+  <title>Do Not Touch</title>
+  <website></website>
+
+  <partners>
+    <partner>
+      <type>Publisher, Product owner</type>
+      <title>Nickelodeon</title>
+      <website>https://www.nick.com</website>
+      <based-in>New York City, United States</based-in>
+    </partner>
+  </partners>
+
+  <release-dates>
+    <release-date>3 March, 2018</release-date>
+  </release-dates>
+
+  <platforms>
+    <platform>
+      <name>App Store</name>
+      <link>https://apps.apple.com/us/app/do-not-touch-by-nickelodeon/id1355139969</link>
+    </platform>
+  </platforms>
+
+  <prices>
+    <price>
+      <currency></currency>
+      <value>Free</value>
+    </price>
+  </prices>
+
+  <description></description>
+
+  <!-- Choose between a single block: -->
+  <history></history>
+
+  <!-- Or multiple blocks: -->
+  <!--
+  <histories>
+    <history>
+      <header></header>
+      <text></text>
+    </history>
+  </histories>
+  -->
+
+  <features>
+    <feature></feature>
+  </features>
+
+  <trailers>
+    <trailer>
+      <name></name>
+
+      <!-- Pick one: -->
+      <youtube>
+        <!-- Video ID only, not the full URL -->
+      </youtube>
+      <vimeo>
+        <!-- Video ID only, not the full URL -->
+      </vimeo>
+    </trailer>
+  </trailers>
+
+  <!-- You can set your widgets here (optional): -->
+  <widgets>
+    <appstore>1355139969</appstore>
+  </widgets>
+
+  <awards>
+    <award>
+      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
+      <info>Bronze Winner, 2019</info>
+      <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/nickelodeon/do-not-touch-by-nickelodeon-43237</link>
+    </award>
+    <award>
+      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
+      <info>Bronze Winner, 2018</info>
+      <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/do-not-touch-by-nickelodeon/do-not-touch-2-0-76289</link>
+    </award>
+  </awards>
+
+  <quotes>
+    <quote>
+      <description></description>
+      <name></name>
+      <website></website>
+      <link></link>
+    </quote>
+  </quotes>
+
+  <additionals>
+    <additional>
+      <title>Apple featuring on App Store US</title>
+      <description>The Wild World of Nickelodeon, in AR</description>
+      <link>https://apps.apple.com/us/story/id1446343695</link>
+    </additional>
+  </additionals>
+
+  <credits>
+    <credit>
+      <person></person>
+      <role></role>
+
+      <!-- Optional: -->
+      <website></website>
+    </credit>
+  </credits>
+
+  <contacts>
+    <contact>
+      <name></name>
+
+      <!-- Pick one: -->
+      <mail></mail>
+      <link></link>
+    </contact>
+  </contacts>
+</game>

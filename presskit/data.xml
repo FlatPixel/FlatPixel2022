@@ -3,17 +3,13 @@
   <title>Flat Pixel</title>
   <based-in>Paris, France</based-in>
   <founding-date>February 8, 2017</founding-date>
-  <website>https://flatpixel.fr</website>
-  <press-contact>
-    hello@flatpixel.fr
-  </press-contact>
+  <website>http://www.flatpixel.fr</website>
+  <phone>N/A</phone>
 
   <!-- Google analytics ID: -->
   <analytics></analytics>
 
   <address>
-    <line>
-    </line>
     <line>
       75013 Paris
     </line>
@@ -24,7 +20,7 @@
 
   <socials>
     <social>
-      <name>Instagram @Flat_Pixel</name>
+      <name>Instagram @flat_pixel</name>
       <link>
         https://www.instagram.com/flat_pixel
       </link>
@@ -35,7 +31,17 @@
         https://twitter.com/Flat_Pixel
       </link>
     </social>
+    <social>
+      <name>Linkedin</name>
+      <link>
+        https://www.linkedin.com/company/flat-pixel-society/
+      </link>
+    </social>
   </socials>
+
+  <press-contact>
+    hello@flatpixel.fr
+  </press-contact>
 
   <description>
     Flat Pixel is a Paris based game studio composed of artists and engineers dedicated to unique visual experiences and cutting edge technology.
@@ -82,9 +88,14 @@
 
   <awards>
     <award>
-      <description>Clio award</description>
-      <info>Do Not Touch by Nickelodeon, Category Virtual/Augmented Reality</info>
+      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
+      <info>Do Not Touch, 2018</info>
       <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/nickelodeon/do-not-touch-by-nickelodeon-43237</link>
+    </award>
+    <award>
+      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
+      <info>Do Not Touch, 2019</info>
+      <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/do-not-touch-by-nickelodeon/do-not-touch-2-0-76289</link>
     </award>
   </awards>
 
