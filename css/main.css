@@ -397,7 +397,7 @@ nav ul li a.active {
 
 .center #about .text-container {
   font-family: "Alata", sans-serif;
-  overflow: scroll;
+  overflow: auto;
   min-width: 0;
   min-height: 0;
 }
