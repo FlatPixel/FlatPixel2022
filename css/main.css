@@ -20,7 +20,7 @@
 
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
   margin: 0;
   color: white;
@@ -34,12 +34,14 @@ ul li {
 
 @font-face {
   font-family: "10Bit";
-  src: url("../fonts/10bit-webfont.woff2") format("woff2"), url("../fonts/10bit-webfont.woff") format("woff");
+  src: url("../fonts/10bit-webfont.woff2") format("woff2"),
+    url("../fonts/10bit-webfont.woff") format("woff");
 }
 
 @font-face {
   font-family: "RetroGaming";
-  src: url("../fonts/Retro-Gaming.ttf") format("ttf"), url("../fonts/Retro-Gaming.woff") format("woff");
+  src: url("../fonts/Retro-Gaming.ttf") format("ttf"),
+    url("../fonts/Retro-Gaming.woff") format("woff");
 }
 
 body {
@@ -57,27 +59,30 @@ main {
 @media screen and (min-width: 600px) and (min-height: 600px) {
   main {
     -ms-grid-columns: 1fr minmax(300px, 800px) 1fr;
-        grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+    grid-template-columns: 1fr minmax(300px, 800px) 1fr;
     -ms-grid-rows: 50px 1fr 50px;
-        grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr 50px;
   }
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
   main {
     -ms-grid-columns: 1fr minmax(200px, 900px) 1fr;
-        grid-template-columns: 1fr minmax(200px, 900px) 1fr;
+    grid-template-columns: 1fr minmax(200px, 900px) 1fr;
     -ms-grid-rows: 50px 1fr 50px;
-        grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr 50px;
   }
 }
 
 @media screen and (orientation: landscape) and (max-height: 600px) {
   main {
     -ms-grid-columns: minmax(25px, 1fr) minmax(200px, 900px) minmax(25px, 1fr);
-        grid-template-columns: minmax(25px, 1fr) minmax(200px, 900px) minmax(25px, 1fr);
+    grid-template-columns: minmax(25px, 1fr) minmax(200px, 900px) minmax(
+        25px,
+        1fr
+      );
     -ms-grid-rows: 50px 1fr 50px;
-        grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr 50px;
   }
 }
 
@@ -90,13 +95,14 @@ nav {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr minmax(300px, 800px) 1fr;
-      grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+  grid-template-columns: 1fr minmax(300px, 800px) 1fr;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px),
+  screen and (orientation: landscape) and (max-height: 600px) {
   nav {
     -ms-grid-columns: 1fr minmax(300px, 900px) 1fr;
-        grid-template-columns: 1fr minmax(300px, 900px) 1fr;
+    grid-template-columns: 1fr minmax(300px, 900px) 1fr;
   }
 }
 
@@ -110,22 +116,22 @@ nav ul {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 nav ul li {
   width: 100%;
   height: 100%;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
 }
 
@@ -160,8 +166,8 @@ nav ul li a.active {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   -ms-grid-row: 2;
   grid-row: 2;
@@ -172,13 +178,13 @@ nav ul li a.active {
 @media screen and (min-width: 600px) and (min-height: 600px) {
   .center {
     -webkit-perspective: 600px;
-            perspective: 600px;
+    perspective: 600px;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 }
 
@@ -196,7 +202,7 @@ nav ul li a.active {
     width: 80%;
     padding-bottom: 80%;
     -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
+    transform-style: preserve-3d;
     -webkit-transition: -webkit-transform 1s;
     transition: -webkit-transform 1s;
     transition: transform 1s;
@@ -236,42 +242,47 @@ nav ul li a.active {
 @media screen and (min-width: 600px) and (min-height: 600px) {
   .center #cube .front {
     -webkit-transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
-            transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
+    transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
   }
   .center #cube .right {
     -webkit-transform: translateX(50%) rotateY(90deg);
-            transform: translateX(50%) rotateY(90deg);
+    transform: translateX(50%) rotateY(90deg);
   }
   .center #cube .back {
     -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg);
-            transform: rotateY(-90deg) translateX(-50%) rotateY(90deg);
+    transform: rotateY(-90deg) translateX(-50%) rotateY(90deg);
   }
   .center #cube .left {
-    -webkit-transform: rotateY(-90deg) translateX(2px) rotateY(90deg) translateX(-50%) rotateY(-90deg);
-            transform: rotateY(-90deg) translateX(2px) rotateY(90deg) translateX(-50%) rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg) translateX(2px) rotateY(90deg)
+      translateX(-50%) rotateY(-90deg);
+    transform: rotateY(-90deg) translateX(2px) rotateY(90deg) translateX(-50%)
+      rotateY(-90deg);
   }
   .center #cube .top {
     -webkit-transform: translateY(50%) rotateX(90deg);
-            transform: translateY(50%) rotateX(90deg);
+    transform: translateY(50%) rotateX(90deg);
   }
   .center #cube .bottom {
     -webkit-transform: translateY(-50%) rotateX(-90deg);
-            transform: translateY(-50%) rotateX(-90deg);
+    transform: translateY(-50%) rotateX(-90deg);
   }
 }
 
 @media screen and (min-width: 600px) and (min-height: 600px) {
   .center .show-right {
-    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
-            transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
+    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg)
+      rotateY(-90deg);
+    transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
   }
   .center .show-front {
-    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(0deg);
-            transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(0deg);
+    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg)
+      rotateY(0deg);
+    transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(0deg);
   }
   .center .show-left {
-    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(90deg);
-            transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(90deg);
+    -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg)
+      rotateY(90deg);
+    transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(90deg);
   }
 }
 
@@ -294,10 +305,10 @@ nav ul li a.active {
   background-color: #ff6b6a;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr) [3];
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr) [3];
+  grid-template-rows: repeat(3, 1fr);
   grid-gap: 20px;
   min-width: 0;
   min-height: 0;
@@ -305,19 +316,19 @@ nav ul li a.active {
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
   .center #about {
-    -ms-grid-columns: (1fr)[6];
-        grid-template-columns: repeat(6, 1fr);
+    -ms-grid-columns: (1fr) [6];
+    grid-template-columns: repeat(6, 1fr);
     -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
   }
 }
 
 @media screen and (orientation: landscape) and (max-height: 600px) {
   .center #about {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    -ms-grid-columns: (1fr) [5];
+    grid-template-columns: repeat(5, 1fr);
     -ms-grid-rows: 1fr;
-        grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
     grid-auto-flow: row dense;
   }
 }
@@ -328,7 +339,8 @@ nav ul li a.active {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px),
+  screen and (orientation: landscape) and (max-height: 600px) {
   .center #about h2 {
     font-family: "10Bit", sans-serif;
     font-size: 2.7em;
@@ -336,7 +348,9 @@ nav ul li a.active {
     grid-column: 1 / -1;
     -ms-grid-row: 1;
     grid-row: 1;
-    text-shadow: 0px 1px #c62e2d, 0px 2px #c62e2d, 0px 3px #c62e2d, 0px 4px #c62e2d, 0px 5px #c62e2d, 0px 6px #c62e2d, 0px 7px #c62e2d, 0px 8px #c62e2d;
+    text-shadow: 0px 1px #c62e2d, 0px 2px #c62e2d, 0px 3px #c62e2d,
+      0px 4px #c62e2d, 0px 5px #c62e2d, 0px 6px #c62e2d, 0px 7px #c62e2d,
+      0px 8px #c62e2d;
   }
 }
 
@@ -397,7 +411,7 @@ nav ul li a.active {
 
 .center #about .text-container {
   font-family: "Alata", sans-serif;
-  overflow: auto;
+  overflow: visible;
   min-width: 0;
   min-height: 0;
 }
@@ -431,12 +445,13 @@ nav ul li a.active {
   text-align: left;
   text-overflow: ellipsis;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   font-size: 1.25em;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px),
+  screen and (orientation: landscape) and (max-height: 600px) {
   .center #about .text-container p {
     font-size: 1.1em;
   }
@@ -455,10 +470,10 @@ nav ul li a.active {
   background-color: #ff6b6a;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[3];
-      grid-template-rows: repeat(3, 1fr);
+  -ms-grid-columns: (1fr) [3];
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr) [3];
+  grid-template-rows: repeat(3, 1fr);
   min-width: 0;
   min-height: 0;
   font-family: "Alata", sans-serif;
@@ -470,7 +485,8 @@ nav ul li a.active {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px),
+  screen and (orientation: landscape) and (max-height: 600px) {
   .center #contact h2 {
     font-family: "10Bit", sans-serif;
     font-size: 2.7em;
@@ -478,25 +494,27 @@ nav ul li a.active {
     grid-column: 1 / -1;
     -ms-grid-row: 1;
     grid-row: 1;
-    text-shadow: 0px 1px #c62e2d, 0px 2px #c62e2d, 0px 3px #c62e2d, 0px 4px #c62e2d, 0px 5px #c62e2d, 0px 6px #c62e2d, 0px 7px #c62e2d, 0px 8px #c62e2d;
+    text-shadow: 0px 1px #c62e2d, 0px 2px #c62e2d, 0px 3px #c62e2d,
+      0px 4px #c62e2d, 0px 5px #c62e2d, 0px 6px #c62e2d, 0px 7px #c62e2d,
+      0px 8px #c62e2d;
   }
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
   .center #contact {
     -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    grid-template-rows: auto;
   }
 }
 
 @media screen and (orientation: landscape) and (max-height: 600px) {
   .center #contact {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr) [4];
+    grid-template-columns: repeat(4, 1fr);
     -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    grid-template-rows: auto;
     grid-gap: 20px;
   }
 }
@@ -512,10 +530,10 @@ nav ul li a.active {
   -ms-grid-row-span: 2;
   grid-row: 1 / span 2;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
@@ -548,7 +566,8 @@ nav ul li a.active {
   padding: 20%;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px),
+  screen and (orientation: landscape) and (max-height: 600px) {
   .center #contact .facebook {
     display: none;
   }

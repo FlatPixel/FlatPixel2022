@@ -27,6 +27,22 @@ document.addEventListener("DOMContentLoaded", function() {
       active(button);
     });
   });
+
+  // Route HTML5 - Parse url and init page
+  var hash = window.location.hash;
+  if (hash.includes("about")) {
+    rotate("show-left");
+    var button = document.querySelector("#btnAbout");
+    active(button);
+  } else if (hash.includes("home")) {
+    rotate("show-front");
+    var button = document.querySelector("#btnHome");
+    active(button);
+  } else if (hash.includes("contact")) {
+    rotate("show-right");
+    var button = document.querySelector("#btnContact");
+    active(button);
+  }
 });
 
 function rotate(side) {
