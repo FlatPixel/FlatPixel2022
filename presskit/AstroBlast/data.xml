@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<product>
+  <title>AstroBlast</title>
+  <website></website>
+
+  <partners>
+    <partner>
+      <type>Partner</type>
+      <title>David C. (HoneyPoneyGames)</title>
+      <website>http://honeyponey.fr/</website>
+      <based-in>Paris, France</based-in>
+    </partner>
+  </partners>
+
+  <release-dates>
+    <release-date>N/A</release-date>
+  </release-dates>
+
+  <platforms>
+    <platform>
+      <name>iOS</name>
+    </platform>
+     <platform>
+      <name>Android</name>
+    </platform>
+  </platforms>
+
+  <prices>
+    <price>
+      <value>Free</value>
+    </price>
+  </prices>
+
+  <description></description>
+
+  <!-- Choose between a single block: -->
+  <history></history>
+
+  <!-- Or multiple blocks: -->
+  <!--
+  <histories>
+    <history>
+      <header></header>
+      <text></text>
+    </history>
+  </histories>
+  -->
+
+  <features>
+    <feature></feature>
+  </features>
+
+  <trailers>
+    <trailer>
+      <name>AstroBlast Trailer - Games First London 2018</name>
+      <youtube>9GQgth3u_gg</youtube>
+    </trailer>
+  </trailers>
+
+  <additionals>
+    <additional>
+      <title></title>
+      <description></description>
+      <link></link>
+    </additional>
+  </additionals>
+
+  <credits>
+    <credit>
+      <person></person>
+      <role></role>
+
+      <!-- Optional: -->
+      <website></website>
+    </credit>
+  </credits>
+
+  <contacts>
+    <contact>
+      <name></name>
+
+      <!-- Pick one: -->
+      <mail></mail>
+      <link></link>
+    </contact>
+  </contacts>
+</product>
