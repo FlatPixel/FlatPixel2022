@@ -57,31 +57,46 @@
     </trailer>
   </trailers>
 
-  <additionals>
-    <additional>
-      <title></title>
-      <description></description>
-      <link></link>
-    </additional>
-  </additionals>
-
   <credits>
     <credit>
-      <person></person>
-      <role></role>
+      <person>David C</person>
+      <role>Game developer</role>
+      <website>https://www.linkedin.com/in/david-ciaudo-2a80b240/</website>
+    </credit>
 
-      <!-- Optional: -->
-      <website></website>
+     <credit>
+      <person>Adrien M</person>
+      <role>Co-founder / CTO</role>
+      <website>https://www.linkedin.com/in/adrienmgm/</website>
+    </credit>
+
+    <credit>
+      <person>Marcin JP</person>
+      <role>Co-founder / Art Director</role>
+      <website>https://www.linkedin.com/in/marcin-jp-a925852b/</website>
+    </credit>
+
+    <credit>
+      <person>Gabriel D</person>
+      <role>Sound Designer</role>
+      <website>https://www.linkedin.com/in/gabriel-dalmasso-48b60055/</website>
     </credit>
   </credits>
 
   <contacts>
     <contact>
-      <name></name>
+      <name>Adrien M</name>
+      <mail>adrien@flatpixel.fr</mail>
+    </contact>
 
-      <!-- Pick one: -->
-      <mail></mail>
-      <link></link>
+    <contact>
+      <name>Marcin JP</name>
+      <mail>marcin@flatpixel.fr</mail>
+    </contact>
+
+    <contact>
+      <name>David C</name>
+      <mail>honeyponeygames@gmail.com</mail>
     </contact>
   </contacts>
 </product>
