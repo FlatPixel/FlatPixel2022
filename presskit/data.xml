@@ -32,6 +32,12 @@
       </link>
     </social>
     <social>
+      <name>Facebook @FlatPixelSociety</name>
+      <link>
+        https://www.facebook.com/FlatPixelSociety/
+      </link>
+    </social>
+    <social>
       <name>Linkedin</name>
       <link>
         https://www.linkedin.com/company/flat-pixel-society/
@@ -126,31 +132,37 @@
     <credit>
       <person>Adrien M</person>
       <role>Co-founder / CTO</role>
+      <website>https://www.linkedin.com/in/adrienmgm/</website>
     </credit>
 
     <credit>
       <person>Marcin JP</person>
       <role>Co-founder / Art Director</role>
+      <website>https://www.linkedin.com/in/marcin-jp-a925852b/</website>
     </credit>
 
     <credit>
       <person>Angéline G</person>
-      <role>Game developer</role>
+      <role>Game / UI Developer</role>
+      <website>https://www.linkedin.com/in/angelineguignard/</website>
     </credit>
 
     <credit>
       <person>David C</person>
       <role>Game developer</role>
+      <website>https://www.linkedin.com/in/david-ciaudo-2a80b240/</website>
     </credit>
 
     <credit>
       <person>Gabriel D</person>
       <role>Sound Designer</role>
+      <website>https://www.linkedin.com/in/gabriel-dalmasso-48b60055/</website>
     </credit>
 
     <credit>
-      <person>Marte U</person>
+      <person>Marte H</person>
       <role>Business Development</role>
+      <website>https://www.linkedin.com/in/mharkestad/</website>
     </credit>
   </credits>
 
