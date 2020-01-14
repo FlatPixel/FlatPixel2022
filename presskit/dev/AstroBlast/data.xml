@@ -23,7 +23,7 @@
     <platform>
       <name>iOS</name>
     </platform>
-     <platform>
+    <platform>
       <name>Android</name>
     </platform>
   </platforms>
@@ -34,23 +34,58 @@
     </price>
   </prices>
 
-  <description></description>
+  <description>
+  AstroBlast is the fruit of a collaboration with Honey Poney Games, in which we tried to extract the pleasure of micro-managing units in RTS games, with the more immediate and explosive fun of a Shmup.  
+  Travel from planet to planet to wipe out the alien threat and grow your squad of space Marines!
+  Every type of marine has their own unique strengths and weaknesses, from the well-rounded Gunner, to the feisty Flamer!
+  Customize your squad to create the ultimate alien blasting team of intergalactic mercenaries!
+  </description>
 
   <!-- Choose between a single block: -->
-  <history></history>
+  <!-- <history></history> -->
 
   <!-- Or multiple blocks: -->
-  <!--
   <histories>
     <history>
-      <header></header>
-      <text></text>
+      <header>The kickoff</header>
+      <text>
+      The story of AstroBlast began with a prototype created by David C of Honey Poney Games, a top-down 2D concept reminiscent of old Starcraft mods, but streamlined into a frantic shooter.
+      He showed it off to Flat Pixel one night over some beers, and we couldn’t stop playing!
+      Something about the game just felt right, and we decided to collaborate with Honey Poney to expand the game to discover its full potential.
+      </text>
+    </history>
+    <history>
+      <header>Iterations...</header>
+      <text>
+      We worked on the game feverishly between projects, and eventually released a first version on the App Store called Blastarts! After a few weeks on the store we were contacted by Space Ape, who loved the game and wanted to learn a bit about our team.
+      They invited us to their swanky London studio and we chatted about potential next steps.
+      We decided to finish the game on our own to see how far we could get.
+      </text>
+    </history>
+    <history>
+      <header>Spotted</header>
+      <text>
+      A few months later we were showing off the newly renamed and overhauled AstroBlast! at Games First London jointly hosted by Supercell and Space Ape.
+      The reaction was very positive, testers had a hard time putting it down!
+      </text>
+    </history>
+    <history>
+      <head>Almost there!</head>
+      <text>
+      But of course, the game still wasn’t finished!
+      A long few months of client work kept us from diving back into AstroBlast, and it stayed on the back burner throughout the summer and autumn.. until now! 
+      We’re happy to share that AstroBlast is back in production! And we’re doing everything we can for an early 2020 release!
+      So hold on to your butts amigos!
+      </text>
     </history>
   </histories>
-  -->
 
   <features>
-    <feature></feature>
+    <feature>Juicy shooter</feature>
+    <feature>Dynamic micro-management RTS combat style</feature>
+    <feature>One touch controls</feature>
+    <feature>Colorful 3D art by Marcin JP.</feature>
+    <feature>Punchy SFX by Gabriel D.</feature>
   </features>
 
   <trailers>
@@ -67,15 +102,15 @@
       <website>https://www.linkedin.com/in/david-ciaudo-2a80b240/</website>
     </credit>
 
-     <credit>
+    <credit>
       <person>Adrien M</person>
-      <role>Co-founder / CTO</role>
+      <role>Game developer</role>
       <website>https://www.linkedin.com/in/adrienmgm/</website>
     </credit>
 
     <credit>
       <person>Marcin JP</person>
-      <role>Co-founder / Art Director</role>
+      <role>Graphism</role>
       <website>https://www.linkedin.com/in/marcin-jp-a925852b/</website>
     </credit>
 
