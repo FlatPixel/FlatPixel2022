@@ -276,6 +276,7 @@ nav#work-nav {
         overflow: hidden;
         font-size: 2em;
         line-height: 50px;
+        cursor: pointer;
 
         // Button/Arrow
         span#arrow-down {
@@ -534,7 +535,7 @@ nav#work-nav {
       font-size: 0;
 
       background-image: url("../img/presskit.png");
-      background-size: 80%;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center center;
 
@@ -553,7 +554,7 @@ nav#work-nav {
       font-size: 0;
 
       background-image: url("../img/joinus.png");
-      background-size: 80%;
+      background-size: 100%;
       background-repeat: no-repeat;
       background-position: center center;
 
@@ -674,7 +675,7 @@ nav#work-nav {
       min-height: 0;
       font-size: 0;
 
-      background-size: 75%;
+      background-size: 60%;
 
       @include for-mobile-portrait-only() {
         padding: 40%;

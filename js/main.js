@@ -128,22 +128,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Scroll navigation
-  document.addEventListener("wheel", onWheel);
-  work.addEventListener("wheel", event => {
-    wheelData = normalizeWheel(event);
-
-    if (cube.classList.contains("show-bottom") && hasChangedCubeFace == false) {
-      work.scrollBy({
-        top: wheelData.pixelY,
-        left: 0
-      });
-    }
-
-    event.preventDefault();
-    event.stopPropagation();
-    event.stopImmediatePropagation();
-    return false;
-  });
+  document.addEventListener("wheel", onWheelFromDocument);
+  work.addEventListener("wheel", onWheelFromWork);
 
   // Add NextVideo button event
   var nextVideoBtn = document.querySelector("#btnNextVideo");
@@ -256,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 var hasChangedCubeFace = false;
 var hitVelocityScrollTop = 0;
-function onWheel(event) {
+function onWheelFromDocument(event) {
   wheelData = normalizeWheel(event);
 
   // Scroll allow to go bottom face
@@ -307,6 +293,48 @@ function onWheel(event) {
       left: 0
     });
   }
+}
+
+function onWheelFromWork(event) {
+  wheelData = normalizeWheel(event);
+
+  // Scroll allow to go front face
+  if (
+    cube.classList.contains("show-bottom") &&
+    hitVelocityScrollTop > 0 &&
+    Math.abs(wheelData.pixelY) > hitVelocityScrollTop &&
+    wheelData.pixelY < 0 &&
+    work.scrollTop == 0
+  ) {
+    hitVelocityScrollTop = 0;
+    rotate("show-front");
+    replaceNextBtnToWorkBtn();
+    muteAllVideos();
+  }
+
+  if (
+    work.scrollTop == 0 &&
+    wheelData.pixelY < 0 &&
+    hitVelocityScrollTop == 0
+  ) {
+    hitVelocityScrollTop = Math.abs(wheelData.pixelY);
+
+    setTimeout(() => {
+      hitVelocityScrollTop = 0;
+    }, 1000);
+  }
+
+  if (cube.classList.contains("show-bottom") && hasChangedCubeFace == false) {
+    work.scrollBy({
+      top: wheelData.pixelY,
+      left: 0
+    });
+  }
+
+  event.preventDefault();
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+  return false;
 }
 
 function rotate(side) {
