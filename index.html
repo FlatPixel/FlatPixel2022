@@ -6,6 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>
       Flat Pixel Society - An Augmented Reality (AR, ARKit, ARCore) Game studio
@@ -24,13 +25,18 @@
     <meta property="og:url" content="http://www.flatpixel.fr/" />
     <meta property="og:image" content="img/FPlogo.png" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154003939-1"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-154003939-1"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'UA-154003939-1');
+      gtag("config", "UA-154003939-1");
     </script>
     <link rel="icon" type="image/png" href="favicon.ico" />
     <link
@@ -38,37 +44,60 @@
       rel="stylesheet"
       defer
     />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.min.css" />
   </head>
   <body>
     <main>
       <!-- Navigation -->
-      <nav>
+      <nav id="main-nav">
         <ul>
           <li>
-            <a id="btnAbout" class="scroll" data-side="show-left" href="#about"
+            <a
+              id="btnAbout"
+              class="link-menu scroll"
+              data-side="show-left"
+              href="#about"
               >About</a
             >
           </li>
           <li>
             <a
               id="btnHome"
-              class="scroll active"
+              class="link-menu scroll active"
               data-side="show-front"
               href="#home"
             >
-              <!-- <img src="img/FPlogo_rounded.png" alt="home Logo"> -->
               Home
             </a>
           </li>
           <li>
             <a
               id="btnContact"
-              class="scroll"
+              class="link-menu scroll"
               data-side="show-right"
               href="#contact"
               >Contact</a
             >
+          </li>
+        </ul>
+      </nav>
+      <nav id="work-nav">
+        <ul>
+          <li>
+            <a
+              id="btnWork"
+              class="link-menu scroll"
+              data-side="show-bottom"
+              href="#work"
+            >
+              <span class="text">Our Stuff</span>
+              <span id="arrow-down"></span>
+            </a>
+          </li>
+          <li>
+            <a id="btnNextVideo">
+              <span id="arrow-down"></span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -86,24 +115,112 @@
               </a>
             </h1>
           </section>
+          <!-- Work -->
+          <section id="work" class="bottom">
+            <h2>Our Stuff</h2>
+            <!-- Videos -->
+            <div class="video-container">
+              <video
+                poster="videos/poster/dnt.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/dnt.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+              <a
+                href="https://apps.apple.com/us/story/id1446343695"
+                target="_blank"
+                class="external"
+                >Link Apple feature</a
+              >
+            </div>
+
+            <div class="video-container">
+              <video
+                poster="videos/poster/astro.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/astro.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+              <span class="mute"></span>
+              <a
+                href="./presskit/AstroBlast/index.html"
+                target="_blank"
+                class="external"
+                >AstroBlast presskit</a
+              >
+            </div>
+
+            <div class="video-container">
+              <video
+                poster="videos/poster/portalmonster.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/portalmonster.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+            </div>
+
+            <div class="video-container">
+              <video
+                poster="videos/poster/fastfood.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/fastfood.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+            </div>
+
+            <div class="video-container">
+              <video
+                poster="videos/poster/roadhead.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/roadhead.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+            </div>
+
+            <div class="video-container">
+              <video
+                poster="videos/poster/turboburger.png"
+                loop
+                muted="muted"
+                playsinline
+              >
+                <source src="videos/turboburger.mp4" type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+              </video>
+              <span class="loading"></span>
+            </div>
+            <!-- End of videos -->
+          </section>
           <!-- About -->
           <section id="about" class="left">
             <h2>About us</h2>
-            <img
-              class="flatpixel-logo"
-              src="img/FPlogo_transparent.png"
-              alt="Flat Pixel Logo"
-            />
             <div class="text-container">
               <p>
                 <strong>Flat Pixel</strong> is a Paris based
                 <strong>Game studio</strong> made up of artists and engineers
                 dedicated to unique visual experiences and cutting edge
                 technology. Since 2012 we’ve created over
-                <a
-                  href="./presskit/DoNotTouch"
-                  target="_blank"
-                  rel="noopener"
+                <a href="./presskit/DoNotTouch" target="_blank" rel="noopener"
                   >60 games and mini-games</a
                 >
                 in <strong>Augmented Reality</strong>, acquiring valuable
@@ -122,89 +239,65 @@
                 >!!
               </p>
             </div>
-            <a
-              href="presskit/index.html"
-              class="press-kit"
-              target="_blank"
-              ><img src="img/presskit_full.png" alt="Our Press Kit"
-            /></a>
-            <a href="mailto:hello@flatpixel.fr" class="join-us"
-              ><img src="img/joinus_full.png" alt="email to joining us"
-            /></a>
-            <a
-              href=""
+            <a href="presskit/index.html" class="press-kit" target="_blank">
+              Our Press Kit
+            </a>
+            <a href="mailto:hello@flatpixel.fr" class="join-us">
+              Join Us
+            </a>
+            <img
               class="collaborator magic"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <img
-                src="img/parteners/magiclogo.png"
-                alt="MagicPockets partner"
-              />
-            </a>
-            <a
-              href="https://nick.com"
+              src="img/parteners/magiclogo.png"
+              alt="MagicPockets partner"
+            />
+            <img
               class="collaborator nick"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src="img/parteners/nicklogo.png" alt="Nickelodeon partner" />
-            </a>
-            <a
-              href="https://spaceapegames.com"
+              src="img/parteners/nicklogo.png"
+              alt="Nickelodeon partner"
+            />
+            <img
               class="collaborator spaceape"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="img/parteners/spaceapelogo.png"
-                alt="SpaceApe partner"
-              />
-            </a>
+              src="img/parteners/spaceapelogo.png"
+              alt="SpaceApe partner"
+            />
           </section>
           <!-- Contact -->
           <section id="contact" class="right">
             <h2>Contact & Social</h2>
             <img class="map" src="img/Paris.png" alt="Location map" />
-            <a href="mailto:hello@flatpixel.fr"
-              ><img class="email" src="img/social/mail_full.png" alt="Our email"
-            /></a>
+            <a href="mailto:hello@flatpixel.fr" class="email">Our email</a>
             <a
               href="https://fr.linkedin.com/company/flat-pixel-society"
               target="_blank"
               rel="noopener noreferrer"
-              ><img
-                class="linkedin"
-                src="img/social/linkedin_full.png"
-                alt="Our linkedIn"
-            /></a>
+              class="linkedin"
+            >
+              Our LinkedIn
+            </a>
             <a
               href="https://www.twitter.com/Flat_Pixel"
               target="_blank"
               rel="noopener noreferrer"
-              ><img
-                class="twitter"
-                src="img/social/twitter_full.png"
-                alt="Our twitter"
-            /></a>
+              class="twitter"
+            >
+              Our Twitter
+            </a>
             <a
               href="https://www.instagram.com/flat_pixel"
               target="_blank"
               rel="noopener noreferrer"
-              ><img
-                class="instagram"
-                src="img/social/insta_full.png"
-                alt="Our instagram page"
-            /></a>
+              class="instagram"
+            >
+              Our Instagram
+            </a>
             <a
               href="https://www.facebook.com/FlatPixelSociety/"
               target="_blank"
               rel="noopener noreferrer"
-              ><img
-                class="facebook"
-                src="img/social/facebook_full.png"
-                alt="Our facebook link"
-            /></a>
+              class="facebook"
+            >
+              Our Facebook
+            </a>
           </section>
         </section>
       </section>
