@@ -14,4 +14,6 @@ _You should install presskit on your machine from npm package manager._
 - Add or modify project presskit page: http://pixelnest.io/presskit.html/product/
 
 The command that we use to build the presskit:
-`presskit build --collapse-menu -o ../`
+
+- Go to ./presskit/dev/
+- `presskit build --collapse-menu -o ../`
