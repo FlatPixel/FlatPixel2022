@@ -49,11 +49,11 @@ $green: #b2ffbd;
 $yellow: #fff4ad;
 $blue: #cbfefd;
 
-$break-mobile-height: 600px;
+$break-mobile-height: 790px;
 $break-mobile-width: 600px;
 
 @mixin for-all-except-mobile {
-  @media screen and (min-width: $break-mobile-width) and (min-height: $break-mobile-height) {
+  @media screen and (min-width: calc(#{$break-mobile-width} + 1px)) and (min-height: calc(#{$break-mobile-height} + 1px)) {
     @content;
   }
 }
@@ -120,7 +120,7 @@ main {
     width: 100vw;
     height: 100vh;
     grid-template-columns: 1fr minmax(300px, 800px) 1fr;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-rows: 50px 1fr 100px;
   }
 
   @include for-mobile-portrait-only() {
@@ -138,7 +138,7 @@ main {
 }
 
 nav#main-nav {
-  z-index: 1;
+  z-index: 100;
   background-color: white;
   position: fixed;
   width: 100%;
@@ -207,7 +207,6 @@ nav#work-nav {
   grid-column: 2;
   grid-row: 3;
   width: 100%;
-  margin-top: -40px;
 
   // Animation
   @keyframes jump {
@@ -397,10 +396,17 @@ nav#work-nav {
 
   #work {
     background-color: $pink;
-    overflow-x: hidden;
-    overflow-y: scroll;
 
-    @include scrollbars(10px, white, $ligh-pink);
+    @include for-all-except-mobile {
+      overflow-x: hidden;
+      overflow-y: scroll;
+
+      @include scrollbars(10px, white, $ligh-pink);
+    }
+
+    @include for-mobile-only {
+      overflow: hidden;
+    }
 
     h2 {
       @include for-all-except-mobile {
@@ -571,6 +577,7 @@ nav#work-nav {
 
     .text-container {
       font-family: $font-alt;
+      z-index: 10;
       overflow: visible;
       min-width: 0;
       min-height: 0;

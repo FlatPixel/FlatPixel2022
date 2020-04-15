@@ -8,46 +8,47 @@
  */
 EasingFunctions = {
   // no easing, no acceleration
-  linear: t => t,
+  linear: (t) => t,
   // accelerating from zero velocity
-  easeInQuad: t => t * t,
+  easeInQuad: (t) => t * t,
   // decelerating to zero velocity
-  easeOutQuad: t => t * (2 - t),
+  easeOutQuad: (t) => t * (2 - t),
   // acceleration until halfway, then deceleration
-  easeInOutQuad: t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t),
+  easeInOutQuad: (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t),
   // accelerating from zero velocity
-  easeInCubic: t => t * t * t,
+  easeInCubic: (t) => t * t * t,
   // decelerating to zero velocity
-  easeOutCubic: t => --t * t * t + 1,
+  easeOutCubic: (t) => --t * t * t + 1,
   // acceleration until halfway, then deceleration
-  easeInOutCubic: t =>
+  easeInOutCubic: (t) =>
     t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1,
   // accelerating from zero velocity
-  easeInQuart: t => t * t * t * t,
+  easeInQuart: (t) => t * t * t * t,
   // decelerating to zero velocity
-  easeOutQuart: t => 1 - --t * t * t * t,
+  easeOutQuart: (t) => 1 - --t * t * t * t,
   // acceleration until halfway, then deceleration
-  easeInOutQuart: t => (t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t),
+  easeInOutQuart: (t) =>
+    t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t,
   // accelerating from zero velocity
-  easeInQuint: t => t * t * t * t * t,
+  easeInQuint: (t) => t * t * t * t * t,
   // decelerating to zero velocity
-  easeOutQuint: t => 1 + --t * t * t * t * t,
+  easeOutQuint: (t) => 1 + --t * t * t * t * t,
   // acceleration until halfway, then deceleration
-  easeInOutQuint: t =>
-    t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t
+  easeInOutQuint: (t) =>
+    t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t,
 };
 
-var body, main, cube, work;
+var body, main, cube, home, work;
 var wheelData;
 var videos = [];
 
 var break_mobile_width = 600;
-var break_mobile_height = 600;
+var break_mobile_height = 790;
 const allExceptMobile = window.matchMedia(
   "screen and (min-width: " +
-    break_mobile_width +
+    (break_mobile_width + 1) +
     "px) and (min-height: " +
-    break_mobile_height +
+    (break_mobile_height + 1) +
     "px)"
 );
 const mobileOnly = window.matchMedia(
@@ -73,14 +74,25 @@ const mobileLandscapeOnly = window.matchMedia(
 // Init (OnDOMLoaded)
 //
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   body = document.querySelector("body");
   main = document.querySelector("main");
+  cube = document.querySelector("#cube");
+  home = document.querySelector("#home");
   work = document.querySelector("#work");
-  cube = document.getElementById("cube");
+
+  // Set auto placement
+  if (mobileLandscapeOnly.matches) {
+    setTimeout(() => {
+      window.scroll({
+        top: (home.offsetWidth * 2.45) / 3,
+        left: 0,
+      });
+    }, 100);
+  }
 
   // Add key events
-  window.addEventListener("keydown", event => {
+  window.addEventListener("keydown", (event) => {
     if (event.keyCode == 37) {
       rotate("show-left");
       hideAndShowWorkBtn();
@@ -99,13 +111,14 @@ document.addEventListener("DOMContentLoaded", function() {
     if (event.keyCode == 40) {
       rotate("show-bottom");
       replaceWorkBtnToNextBtn();
+      autoloadVideos();
     }
   });
 
   // Add buttons events
   var buttons = document.querySelectorAll("nav > ul > li > a.link-menu");
-  buttons.forEach(button => {
-    button.addEventListener("click", event => {
+  buttons.forEach((button) => {
+    button.addEventListener("click", (event) => {
       var side = button.getAttribute("data-side");
       rotate(side);
       if (side != "show-bottom") {
@@ -120,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Add link event
   var giveus = document.querySelector(".give-us-a-shout");
-  giveus.addEventListener("click", event => {
+  giveus.addEventListener("click", (event) => {
     rotate("show-right");
     hideAndShowWorkBtn();
     var button = document.querySelector("#btnContact");
@@ -133,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Add NextVideo button event
   var nextVideoBtn = document.querySelector("#btnNextVideo");
-  nextVideoBtn.addEventListener("click", event => {
+  nextVideoBtn.addEventListener("click", (event) => {
     var workHeight = work.offsetHeight;
     var workCurrentScroll = work.scrollTop;
 
@@ -147,17 +160,17 @@ document.addEventListener("DOMContentLoaded", function() {
     work.scrollTo({
       top: newScrollValue,
       left: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
 
-  (function() {
+  (function () {
     scrollTo();
   })();
 
   // Fill videos array
   var videoContainers = work.querySelectorAll(".video-container");
-  videoContainers.forEach(container => {
+  videoContainers.forEach((container) => {
     videos.push({
       container: container,
       media: container.querySelector("video"),
@@ -166,26 +179,26 @@ document.addEventListener("DOMContentLoaded", function() {
       externalIcon: container.querySelector(".external"),
       loadingIcon: container.querySelector(".loading"),
       intervalId: null,
-      lerpValue: 0
+      lerpValue: 0,
     });
   });
 
   // Add click event to video container
-  videos.forEach(video => {
-    video.container.addEventListener("click", event => {
+  videos.forEach((video) => {
+    video.container.addEventListener("click", (event) => {
       toggleMuteVideo(video);
     });
 
     if (video.externalIcon) {
-      video.externalIcon.addEventListener("click", event => {
+      video.externalIcon.addEventListener("click", (event) => {
         event.stopPropagation();
       });
     }
   });
 
   // Add video loading
-  videos.forEach(video => {
-    video.media.addEventListener("loadstart", event => {
+  videos.forEach((video) => {
+    video.media.addEventListener("loadstart", (event) => {
       video.loadingIcon.style.display = "block";
       // console.log("loadstart");
     });
@@ -193,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //   video.loadingIcon.style.display = "block";
     //   // console.log("waiting");
     // });
-    video.media.addEventListener("canplay", event => {
+    video.media.addEventListener("canplay", (event) => {
       video.loadingIcon.style.display = "none";
       // console.log("canplay");
     });
@@ -290,7 +303,7 @@ function onWheelFromDocument(event) {
   if (cube.classList.contains("show-bottom") && hasChangedCubeFace == false) {
     work.scrollBy({
       top: wheelData.pixelY,
-      left: 0
+      left: 0,
     });
   }
 }
@@ -327,7 +340,7 @@ function onWheelFromWork(event) {
   if (cube.classList.contains("show-bottom") && hasChangedCubeFace == false) {
     work.scrollBy({
       top: wheelData.pixelY,
-      left: 0
+      left: 0,
     });
   }
 
@@ -344,7 +357,7 @@ function rotate(side) {
 function active(button) {
   var buttons = document.querySelectorAll("nav > ul > li > a");
 
-  buttons.forEach(b => {
+  buttons.forEach((b) => {
     b.classList.remove("active");
   });
 
@@ -439,11 +452,11 @@ function handleNextBtn(event) {
 // @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
 function scrollTo() {
   const links = document.querySelectorAll(".scroll");
-  links.forEach(each => (each.onclick = scrollAnchors));
+  links.forEach((each) => (each.onclick = scrollAnchors));
 }
 
 function scrollAnchors(e, respond = null) {
-  const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+  const distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top);
   e.preventDefault();
   var targetID = respond
     ? respond.getAttribute("href")
@@ -452,7 +465,7 @@ function scrollAnchors(e, respond = null) {
   if (!targetAnchor) return;
   const originalTop = distanceToTop(targetAnchor);
   window.scrollBy({ top: originalTop - 50, left: 0, behavior: "smooth" });
-  const checkIfDone = setInterval(function() {
+  const checkIfDone = setInterval(function () {
     const atBottom =
       window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
     if (distanceToTop(targetAnchor) === 0 || atBottom) {
@@ -492,7 +505,7 @@ function toggleMuteVideo(video, shouldMute) {
 }
 
 function muteAllVideos() {
-  videos.forEach(video => {
+  videos.forEach((video) => {
     toggleMuteVideo(video, true);
   });
 }
@@ -529,7 +542,7 @@ function autoplayVideos() {
   }
 
   var i = 0;
-  videos.forEach(video => {
+  videos.forEach((video) => {
     var videoTop = video.container.offsetTop;
     var videoBottom = video.container.offsetTop + video.container.offsetHeight;
     // console.log("video#" + i + ": " + videoTop + " " + videoBottom);
@@ -543,11 +556,11 @@ function autoplayVideos() {
 
       if (video.playPromise) {
         video.playPromise
-          .then(_ => {
+          .then((_) => {
             // Automatic playback started!
             video.playPromise = null;
           })
-          .catch(error => {
+          .catch((error) => {
             console.log("Auto-play was prevented");
           });
       }
@@ -559,12 +572,12 @@ function autoplayVideos() {
     ) {
       if (video.playPromise) {
         video.playPromise
-          .then(_ => {
+          .then((_) => {
             // Automatic playback started!
             video.playPromise = null;
             video.media.pause();
           })
-          .catch(error => {
+          .catch((error) => {
             console.log("Auto-play was prevented");
           });
       } else {
@@ -602,7 +615,7 @@ function debounce(func, wait, immediate) {
 
     // The function to be called after
     // the debounce time has elapsed
-    var later = function() {
+    var later = function () {
       // null timeout to indicate the debounce ended
       timeout = null;
 
