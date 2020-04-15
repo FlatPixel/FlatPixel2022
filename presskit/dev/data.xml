@@ -91,25 +91,27 @@
 
   <awards>
     <award>
-      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
-      <info>Do Not Touch, 2018</info>
-      <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/nickelodeon/do-not-touch-by-nickelodeon-43237</link>
+      <description>2020 Kidscreen Award - Best Game App—Branded</description>
+      <info>- Do Not Touch, 2020 (http://kidscreen.com/2020/02/11/who-took-home-a-2020-kidscreen-award)</info>
     </award>
     <award>
       <description>CLIO Entertainment - Virtual/Augmented Reality</description>
-      <info>Do Not Touch, 2019</info>
-      <link>https://clios.com/entertainment/winner/television-streaming-digital-mobile/do-not-touch-by-nickelodeon/do-not-touch-2-0-76289</link>
+      <info>- Do Not Touch, 2019 (https://clios.com/entertainment/winner/television-streaming-digital-mobile/do-not-touch-by-nickelodeon/do-not-touch-2-0-76289)</info>
+    </award>
+    <award>
+      <description>CLIO Entertainment - Virtual/Augmented Reality</description>
+      <info>- Do Not Touch, 2018 (https://clios.com/entertainment/winner/television-streaming-digital-mobile/nickelodeon/do-not-touch-by-nickelodeon-43237)</info>
     </award>
   </awards>
 
-  <quotes>
+  <!-- <quotes>
     <quote>
       <description>Do Not Touch - Review</description>
       <name></name>
       <website>AR Critic</website>
       <link>https://arcritic.com/1674/do-not-touch-app-review-ios/</link>
     </quote>
-  </quotes>
+  </quotes> -->
 
   <additionals>
     <additional>
