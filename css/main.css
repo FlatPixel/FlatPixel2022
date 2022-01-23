@@ -52,12 +52,12 @@ main {
   display: grid;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   main {
     width: 100vw;
     height: 100vh;
-    -ms-grid-columns: 1fr minmax(300px, 800px) 1fr;
-        grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+    -ms-grid-columns: 1fr minmax(500px, 800px) 1fr;
+        grid-template-columns: 1fr minmax(500px, 800px) 1fr;
     -ms-grid-rows: 50px 1fr 100px;
         grid-template-rows: 50px 1fr 100px;
   }
@@ -72,7 +72,7 @@ main {
   }
 }
 
-@media screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: landscape) and (max-height: 850px) {
   main {
     -ms-grid-columns: minmax(200px, 1fr) minmax(200px, 900px) minmax(200px, 1fr);
         grid-template-columns: minmax(200px, 1fr) minmax(200px, 900px) minmax(200px, 1fr);
@@ -93,7 +93,7 @@ nav#main-nav {
       grid-template-columns: 1fr minmax(300px, 800px) 1fr;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   nav#main-nav {
     -ms-grid-columns: 1fr minmax(300px, 900px) 1fr;
         grid-template-columns: 1fr minmax(300px, 900px) 1fr;
@@ -148,155 +148,82 @@ nav#main-nav ul li a.active {
   color: #ff6b6a;
 }
 
-nav#work-nav {
-  z-index: 1;
-  -ms-grid-column: 2;
-  grid-column: 2;
-  -ms-grid-row: 3;
-  grid-row: 3;
-  width: 100%;
-}
-
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
-  nav#work-nav {
-    display: none;
-  }
-}
-
-@-webkit-keyframes jump {
-  0% {
-    top: 40px;
-  }
-  50% {
-    top: 45px;
-  }
-  100% {
-    top: 40px;
-  }
-}
-
-@keyframes jump {
-  0% {
-    top: 40px;
-  }
-  50% {
-    top: 45px;
-  }
-  100% {
-    top: 40px;
-  }
-}
-
-@-webkit-keyframes hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@-webkit-keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-nav#work-nav .hide {
-  -webkit-animation: hide ease-out 0.25s 1 both;
-          animation: hide ease-out 0.25s 1 both;
-}
-
-nav#work-nav .show {
-  -webkit-animation: show ease-in 0.5s both;
-          animation: show ease-in 0.5s both;
-}
-
-nav#work-nav ul {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-nav#work-nav ul li {
-  width: 150px;
-  height: 100%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  overflow: hidden;
-}
-
-nav#work-nav ul li:nth-child(2) {
-  display: none;
-}
-
-nav#work-nav ul li a {
+.work-menu {
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
-  color: white;
   overflow: hidden;
-  font-size: 2em;
-  line-height: 50px;
-  cursor: pointer;
 }
 
-nav#work-nav ul li a span#arrow-down {
-  display: block;
+.wrapper-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: absolute;
-  left: 50%;
-  margin-left: -15px;
-  top: 35px;
-  -webkit-animation: jump 0.5s infinite;
-          animation: jump 0.5s infinite;
-  width: 20px;
-  height: 20px;
-  border-bottom: 8px solid #fff;
-  border-right: 8px solid #fff;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  width: 66vh;
 }
 
-nav#work-nav ul li a:hover {
-  opacity: 0.7;
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
+#work-left {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 1;
+  grid-column: 1;
+}
+
+#work-left .wrapper-slider {
+  right: 0;
+}
+
+#work-right {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 2;
+  grid-row: 2 / 4;
+  -ms-grid-column: 3;
+  grid-column: 3;
+}
+
+#work-right .wrapper-slider {
+  left: 0;
+}
+
+.work-slider {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.work-slider .vignette {
+  display: block;
+  position: relative;
+  border: solid white 10px;
+  margin: 5px;
+}
+
+.work-slider video {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.work-slider .overlay {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background: white;
+  opacity: 0.75;
 }
 
 .center {
@@ -314,7 +241,7 @@ nav#work-nav ul li a:hover {
   grid-column: 2;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center {
     -webkit-perspective: 600px;
             perspective: 600px;
@@ -336,7 +263,7 @@ nav#work-nav ul li a:hover {
   position: relative;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #cube {
     width: 80%;
     padding-bottom: 80%;
@@ -353,14 +280,14 @@ nav#work-nav ul li a:hover {
   width: 100%;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #cube section {
     position: absolute;
     height: 100%;
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #cube section:first-child {
     padding: 5px 10px;
   }
@@ -370,7 +297,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #cube .front {
     -webkit-transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
             transform: rotateY(-90deg) translateX(50%) rotateY(90deg);
@@ -397,7 +324,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center .show-right {
     -webkit-transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
             transform: rotateY(-90deg) translateX(-50%) rotateY(90deg) rotateY(-90deg);
@@ -424,7 +351,7 @@ nav#work-nav ul li a:hover {
   background-color: #ff6b6a;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #work {
     overflow-x: hidden;
     overflow-y: scroll;
@@ -445,19 +372,19 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #work {
     overflow: hidden;
   }
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #work h2 {
     display: none;
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #work h2 {
     font-family: "10Bit", sans-serif;
     font-size: 2.7em;
@@ -475,7 +402,7 @@ nav#work-nav ul li a:hover {
   background-color: black;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #work .video-container {
     width: auto;
     height: 100%;
@@ -483,7 +410,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #work .video-container {
     width: 100%;
     padding-top: 100%;
@@ -555,7 +482,7 @@ nav#work-nav ul li a:hover {
   min-height: 0;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about {
     -ms-grid-columns: (1fr)[6];
         grid-template-columns: repeat(6, 1fr);
@@ -564,13 +491,13 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #about h2 {
     display: none;
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about h2 {
     font-family: "10Bit", sans-serif;
     font-size: 2.7em;
@@ -592,7 +519,7 @@ nav#work-nav ul li a:hover {
   background-position: center center;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about .press-kit {
     grid-column: span 3;
     padding: 50%;
@@ -613,7 +540,7 @@ nav#work-nav ul li a:hover {
   background-position: center center;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about .join-us {
     grid-column: span 3;
     padding: 50%;
@@ -624,7 +551,7 @@ nav#work-nav ul li a:hover {
   opacity: 0.8;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about .collaborator {
     grid-column: span 2;
   }
@@ -633,12 +560,12 @@ nav#work-nav ul li a:hover {
 .center #about .text-container {
   font-family: "Alata", sans-serif;
   z-index: 10;
-  overflow: visible;
+  overflow: auto;
   min-width: 0;
   min-height: 0;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #about .text-container {
     -ms-grid-column: 2;
     -ms-grid-column-span: 2;
@@ -649,7 +576,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about .text-container {
     grid-column: 1 / -1;
   }
@@ -669,7 +596,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #about .text-container p {
     font-size: 1.1em;
   }
@@ -697,13 +624,13 @@ nav#work-nav ul li a:hover {
   font-family: "Alata", sans-serif;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
+@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(850px + 1px)) {
   .center #contact h2 {
     display: none;
   }
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #contact h2 {
     font-family: "10Bit", sans-serif;
     font-size: 2.7em;
@@ -724,7 +651,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: landscape) and (max-height: 850px) {
   .center #contact {
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
@@ -759,7 +686,7 @@ nav#work-nav ul li a:hover {
   }
 }
 
-@media screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: landscape) and (max-height: 850px) {
   .center #contact .map {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
@@ -827,7 +754,7 @@ nav#work-nav ul li a:hover {
   opacity: 0.8;
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 850px) {
   .center #contact .facebook {
     display: none;
   }
@@ -841,19 +768,20 @@ footer {
   height: 100%;
 }
 
-@media screen and (min-width: calc(600px + 1px)) and (min-height: calc(790px + 1px)) {
-  footer {
-    display: none;
-  }
-}
-
 footer p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 100%;
   height: 100%;
-  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   color: #ffbbbb;
   overflow: hidden;
   font-size: 1em;
-  line-height: 50px;
 }
 /*# sourceMappingURL=main.css.map */

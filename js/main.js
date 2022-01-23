@@ -93,24 +93,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Add key events
   window.addEventListener("keydown", (event) => {
-    if (event.keyCode == 37) {
+    if (event.key == "ArrowLeft") {
       rotate("show-left");
-      hideAndShowWorkBtn();
+      // hideAndShowWorkBtn();
       muteAllVideos();
     }
-    if (event.keyCode == 38) {
+    if (event.key == "ArrowUp") {
       rotate("show-front");
-      hideAndShowWorkBtn();
+      // hideAndShowWorkBtn();
       muteAllVideos();
     }
-    if (event.keyCode == 39) {
+    if (event.key == "ArrowRight") {
       rotate("show-right");
-      hideAndShowWorkBtn();
+      // hideAndShowWorkBtn();
       muteAllVideos();
     }
-    if (event.keyCode == 40) {
+    if (event.key == "ArrowDown") {
       rotate("show-bottom");
-      replaceWorkBtnToNextBtn();
+      // replaceWorkBtnToNextBtn();
       autoloadVideos();
     }
   });
@@ -123,9 +123,9 @@ document.addEventListener("DOMContentLoaded", function () {
       rotate(side);
       if (side != "show-bottom") {
         muteAllVideos();
-        hideAndShowWorkBtn();
+        // hideAndShowWorkBtn();
       } else {
-        replaceWorkBtnToNextBtn();
+        // replaceWorkBtnToNextBtn();
       }
       active(button);
     });
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var giveus = document.querySelector(".give-us-a-shout");
   giveus.addEventListener("click", (event) => {
     rotate("show-right");
-    hideAndShowWorkBtn();
+    // hideAndShowWorkBtn();
     var button = document.querySelector("#btnContact");
     active(button);
   });
@@ -144,25 +144,25 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("wheel", onWheelFromDocument);
   work.addEventListener("wheel", onWheelFromWork);
 
-  // Add NextVideo button event
-  var nextVideoBtn = document.querySelector("#btnNextVideo");
-  nextVideoBtn.addEventListener("click", (event) => {
-    var workHeight = work.offsetHeight;
-    var workCurrentScroll = work.scrollTop;
+  // // Add NextVideo button event
+  // var nextVideoBtn = document.querySelector("#btnNextVideo");
+  // nextVideoBtn.addEventListener("click", (event) => {
+  //   var workHeight = work.offsetHeight;
+  //   var workCurrentScroll = work.scrollTop;
 
-    var videoTarget = Math.min(
-      Math.floor(workCurrentScroll / workHeight) + 1,
-      videos.length - 1
-    );
+  //   var videoTarget = Math.min(
+  //     Math.floor(workCurrentScroll / workHeight) + 1,
+  //     videos.length - 1
+  //   );
 
-    var newScrollValue = workHeight * videoTarget;
+  //   var newScrollValue = workHeight * videoTarget;
 
-    work.scrollTo({
-      top: newScrollValue,
-      left: 0,
-      behavior: "smooth",
-    });
-  });
+  //   work.scrollTo({
+  //     top: newScrollValue,
+  //     left: 0,
+  //     behavior: "smooth",
+  //   });
+  // });
 
   (function () {
     scrollTo();
@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Add NextBtn behaviour on wheel
-  work.addEventListener("scroll", debounce(handleNextBtn, 100), false);
+  // work.addEventListener("scroll", debounce(handleNextBtn, 100), false);
 
   // Add scrolling video autoplay
   work.addEventListener("scroll", debounce(autoplayVideos, 100), false);
@@ -223,26 +223,26 @@ document.addEventListener("DOMContentLoaded", function () {
   var hash = window.location.hash;
   if (hash.includes("about")) {
     rotate("show-left");
-    hideAndShowWorkBtn();
+    // hideAndShowWorkBtn();
     muteAllVideos();
     var button = document.querySelector("#btnAbout");
     active(button);
   } else if (hash.includes("home")) {
     rotate("show-front");
-    replaceNextBtnToWorkBtn();
-    hideAndShowWorkBtn();
+    // replaceNextBtnToWorkBtn();
+    // hideAndShowWorkBtn();
     muteAllVideos();
     var button = document.querySelector("#btnHome");
     active(button);
   } else if (hash.includes("work")) {
     rotate("show-bottom");
-    replaceWorkBtnToNextBtn();
+    // replaceWorkBtnToNextBtn();
     var button = document.querySelector("#btnWork");
     active(button);
     autoplayVideos();
   } else if (hash.includes("contact")) {
     rotate("show-right");
-    hideAndShowWorkBtn();
+    // hideAndShowWorkBtn();
     muteAllVideos();
     var button = document.querySelector("#btnContact");
     active(button);
@@ -265,7 +265,7 @@ function onWheelFromDocument(event) {
   ) {
     work.scrollTop = 0;
     rotate("show-bottom");
-    replaceWorkBtnToNextBtn();
+    // replaceWorkBtnToNextBtn();
     autoplayVideos();
 
     hasChangedCubeFace = true;
@@ -284,7 +284,7 @@ function onWheelFromDocument(event) {
   ) {
     hitVelocityScrollTop = 0;
     rotate("show-front");
-    replaceNextBtnToWorkBtn();
+    // replaceNextBtnToWorkBtn();
     muteAllVideos();
   }
 
@@ -321,7 +321,7 @@ function onWheelFromWork(event) {
   ) {
     hitVelocityScrollTop = 0;
     rotate("show-front");
-    replaceNextBtnToWorkBtn();
+    // replaceNextBtnToWorkBtn();
     muteAllVideos();
   }
 
@@ -364,89 +364,89 @@ function active(button) {
   if (button) button.classList.add("active");
 }
 
-function hideWorkBtn() {
-  var btnWork = document.querySelector("#btnWork");
-  btnWork.parentElement.classList.remove("show");
-  btnWork.parentElement.classList.add("hide");
+// function hideWorkBtn() {
+//   var btnWork = document.querySelector("#btnWork");
+//   btnWork.parentElement.classList.remove("show");
+//   btnWork.parentElement.classList.add("hide");
 
-  setTimeout(() => {
-    btnWork.parentElement.style.display = "none";
-  }, 250);
-}
+//   setTimeout(() => {
+//     btnWork.parentElement.style.display = "none";
+//   }, 250);
+// }
 
-function showWorkBtn() {
-  var btnWork = document.querySelector("#btnWork");
-  btnWork.parentElement.style.display = "block";
-  btnWork.parentElement.classList.remove("hide");
-  btnWork.parentElement.classList.add("show");
-}
+// function showWorkBtn() {
+//   var btnWork = document.querySelector("#btnWork");
+//   btnWork.parentElement.style.display = "block";
+//   btnWork.parentElement.classList.remove("hide");
+//   btnWork.parentElement.classList.add("show");
+// }
 
-function showNextBtn() {
-  var nextVideoBtn = document.querySelector("#btnNextVideo");
-  nextVideoBtn.parentElement.style.display = "block";
-  nextVideoBtn.parentElement.classList.remove("hide");
-  nextVideoBtn.parentElement.classList.add("show");
-}
+// function showNextBtn() {
+//   var nextVideoBtn = document.querySelector("#btnNextVideo");
+//   nextVideoBtn.parentElement.style.display = "block";
+//   nextVideoBtn.parentElement.classList.remove("hide");
+//   nextVideoBtn.parentElement.classList.add("show");
+// }
 
-function hideNextBtn() {
-  var nextVideoBtn = document.querySelector("#btnNextVideo");
-  nextVideoBtn.parentElement.classList.remove("show");
-  nextVideoBtn.parentElement.classList.add("hide");
+// function hideNextBtn() {
+//   var nextVideoBtn = document.querySelector("#btnNextVideo");
+//   nextVideoBtn.parentElement.classList.remove("show");
+//   nextVideoBtn.parentElement.classList.add("hide");
 
-  setTimeout(() => {
-    nextVideoBtn.parentElement.style.display = "none";
-  }, 250);
-}
+//   setTimeout(() => {
+//     nextVideoBtn.parentElement.style.display = "none";
+//   }, 250);
+// }
 
-function hideAndShowWorkBtn() {
-  hideNextBtn();
-  hideWorkBtn();
-  setTimeout(showWorkBtn, 500);
-}
+// function hideAndShowWorkBtn() {
+//   hideNextBtn();
+//   hideWorkBtn();
+//   setTimeout(showWorkBtn, 500);
+// }
 
-var replaceTimeOut = null;
-function replaceWorkBtnToNextBtn() {
-  if (replaceTimeOut) {
-    clearTimeout(replaceTimeOut);
-    replaceTimeOut = null;
-  }
+// var replaceTimeOut = null;
+// function replaceWorkBtnToNextBtn() {
+//   if (replaceTimeOut) {
+//     clearTimeout(replaceTimeOut);
+//     replaceTimeOut = null;
+//   }
 
-  hideWorkBtn();
-  replaceTimeOut = setTimeout(showNextBtn, 500);
-}
+//   hideWorkBtn();
+//   replaceTimeOut = setTimeout(showNextBtn, 500);
+// }
 
-function replaceNextBtnToWorkBtn() {
-  if (replaceTimeOut) {
-    clearTimeout(replaceTimeOut);
-    replaceTimeOut = null;
-  }
+// function replaceNextBtnToWorkBtn() {
+//   if (replaceTimeOut) {
+//     clearTimeout(replaceTimeOut);
+//     replaceTimeOut = null;
+//   }
 
-  hideNextBtn();
-  replaceTimeOut = setTimeout(showWorkBtn, 500);
-}
+//   hideNextBtn();
+//   replaceTimeOut = setTimeout(showWorkBtn, 500);
+// }
 
-function handleNextBtn(event) {
-  var nextVideoBtn = document.querySelector("#btnNextVideo");
+// function handleNextBtn(event) {
+//   var nextVideoBtn = document.querySelector("#btnNextVideo");
 
-  var maxScrollValue = (videos.length - 1) * work.offsetHeight;
-  var offsetTolerance = work.offsetHeight / 2;
-  // console.log("work.offsetHeight: " + work.offsetHeight);
-  // console.log("videos.length: " + videos.length);
-  // console.log("maxScrollValue: " + maxScrollValue);
-  // console.log("work.scrollTop: " + work.scrollTop);
+//   var maxScrollValue = (videos.length - 1) * work.offsetHeight;
+//   var offsetTolerance = work.offsetHeight / 2;
+//   // console.log("work.offsetHeight: " + work.offsetHeight);
+//   // console.log("videos.length: " + videos.length);
+//   // console.log("maxScrollValue: " + maxScrollValue);
+//   // console.log("work.scrollTop: " + work.scrollTop);
 
-  if (
-    cube.classList.contains("show-bottom") &&
-    work.scrollTop >= maxScrollValue - offsetTolerance
-  ) {
-    hideNextBtn();
-  } else if (
-    cube.classList.contains("show-bottom") &&
-    nextVideoBtn.parentElement.classList.contains("hide")
-  ) {
-    replaceWorkBtnToNextBtn();
-  }
-}
+//   if (
+//     cube.classList.contains("show-bottom") &&
+//     work.scrollTop >= maxScrollValue - offsetTolerance
+//   ) {
+//     hideNextBtn();
+//   } else if (
+//     cube.classList.contains("show-bottom") &&
+//     nextVideoBtn.parentElement.classList.contains("hide")
+//   ) {
+//     replaceWorkBtnToNextBtn();
+//   }
+// }
 
 // Vanilla JavaScript Scroll to Anchor
 // @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
