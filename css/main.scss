@@ -197,8 +197,11 @@ nav#main-nav {
 
 .wrapper-slider {
   display: flex;
-  position: absolute;
-  width: 66vh;
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  max-width: 350px;
+  min-width: 250px;
 }
 
 #work-left {
@@ -223,14 +226,58 @@ nav#main-nav {
   display: inline-flex;
   flex-direction: column;
   align-content: center;
-  justify-content: space-around;
-  // background: white;
+  justify-content: flex-end;
+  height: 800px;
+  width: 50%;
+  /* animation: sliderLoop 20s infinite linear; */
+  
+  @keyframes sliderLoop {
+    0% {transform: translateY(0%);}
+    100% {transform: translateY(-100%);}
+  }
+
+  .vignette:hover .overlay {
+    opacity: 0;
+  }
 
   .vignette {
     display: block;
     position: relative;
     border: solid white 10px;
-    margin: 5px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+
+  @mixin vignetteLoop($nbVignettes, $duration) {
+    $step : $duration / $nbVignettes;
+
+    @keyframes vignetteLoop {
+      0% {order: 3; bottom: 50%; top: 0%; border-color: blue;}
+      100% {order: 2; bottom: 0%; top: 50%; border-color: red;}
+    }
+
+    @for $i from 1 to $nbVignettes {
+      &:nth-child(#{$i}) {
+        animation-delay: (#{$i/$duration*$duration}) + s;
+        animation-name: vignetteLoop;
+        animation-duration: $step + s;
+        animation-iteration-count: infinite;
+        animation-timing-function: steps(2, end);
+      }
+    }
+  }
+
+  .vignette {
+    position: relative;
+    order: 3;
+    bottom: 50%;
+
+    // @include vignetteLoop($nbVignettes:6, $duration:200);
+  }
+
+  .pivot {
+    order: 1 !important;
+    top: 50% !important;
   }
 
   video {
@@ -247,7 +294,8 @@ nav#main-nav {
     top: 0px;
     left: 0px;
     background: white;
-    opacity: 0.75;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-out;
   }
 }
 
