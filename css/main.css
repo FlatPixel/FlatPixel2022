@@ -803,6 +803,12 @@ nav#work-nav ul li a:hover {
   opacity: 0.8;
 }
 
+@media screen and (orientation: portrait) and (max-width: 600px), screen and (orientation: landscape) and (max-height: 790px) {
+  .center #contact .linkedin {
+    display: none;
+  }
+}
+
 .center #contact .twitter {
   background-image: url("../img/social/twitter.png");
 }
@@ -831,6 +837,14 @@ nav#work-nav ul li a:hover {
   .center #contact .facebook {
     display: none;
   }
+}
+
+.center #contact .snapchat {
+  background-image: url("../img/social/snapchat.png");
+}
+
+.center #contact .snapchat:hover {
+  opacity: 0.8;
 }
 
 footer {

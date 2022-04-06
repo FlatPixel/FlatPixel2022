@@ -706,6 +706,10 @@ nav#work-nav {
       &:hover {
         opacity: 0.8;
       }
+
+      @include for-mobile-only() {
+        display: none;
+      }
     }
 
     .twitter {
@@ -733,6 +737,14 @@ nav#work-nav {
 
       @include for-mobile-only() {
         display: none;
+      }
+    }
+
+    .snapchat {
+      background-image: url("../img/social/snapchat.png");
+
+      &:hover {
+        opacity: 0.8;
       }
     }
   }
